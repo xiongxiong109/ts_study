@@ -26,6 +26,29 @@ let bgColor: string = Colors.Orange;
 // 任意值类型
 let anyTypeVar: any = 4;
 anyTypeVar = "string";
-console.log(anyTypeVar);
+// console.log(anyTypeVar);
 
-// 空类型(void 类似c)
+// 空类型(void 类似c, 一般放在函数中)
+function showAlert(content: string = 'hello'): void {
+	console.log(content);
+}
+
+// showAlert();
+// showAlert('hello world');
+
+// null 和 undefined
+// never 类型
+function showError(message: string): never {
+	throw new Error(message);
+}
+
+// showError('never say never');
+
+// 类型断言
+let assert: string = 'describe sth assert a equal to b';
+// 用尖括号来断言该变量类型为string
+// let len: number = (<string>assert).length;
+// console.log(len);
+// 用as 来断言 (在jsx中, 只能使用as断言)
+let len: any = (assert as string).length;
+console.log(len);
