@@ -1,0 +1,34 @@
+{
+  "name": "gulp_ts",
+  "version": "1.0.0",
+  "description": "how to use ts",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "author": "xiongxiong",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.7",
+    "typescript": "^2.4.1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.7",
+    "typescript": "^2.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiongxiong109/ts_study.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "gulp"
+  ],
+  "bugs": {
+    "url": "https://github.com/xiongxiong109/ts_study/issues"
+  },
+  "homepage": "https://github.com/xiongxiong109/ts_study#readme"
+}
