@@ -52,6 +52,7 @@ function queryOrderInfo(info: OrderInfoModel): void {
 // queryOrderInfo({oid: 18, uid: 25});
 
 // interface 函数类型(接口只是定义了一套类型, 需要放到具体的函数或者类中去实现)
+// interface反映到js中
 interface PrdListModel {
 	uid: Number,
 	queryStr: String,
