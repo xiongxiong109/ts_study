@@ -96,26 +96,26 @@ let queryCarInfo: carBaseModel = {
 // 接口继承类
 
 // person class
-class Person {
-	private _lifeType: string = 'human';
-}
+// class Person {
+// 	private _lifeType: string = 'human';
+// }
 // person interface
 // 变性接口继承自person类, 给person类定义了具体的方法
 // 这个接口里的方法只能被这个类及其子类去具体实现
-interface ChangeSex extends Person {
-	toggleSex(): void;
-}
+// interface ChangeSex extends Person {
+// 	toggleSex(): void;
+// }
 
-class Man extends Person {
-	gender: string = 'male';
-	toggleSex() {
-		this.gender = 'female';
-	};
-}
+// class Man extends Person {
+// 	gender: string = 'male';
+// 	toggleSex() {
+// 		this.gender = 'female';
+// 	};
+// }
 
-let bear = new Man();
+// let bear = new Man();
 // _listType是私有属性, 也无法访问到
 // console.log(bear._lifeType);
-console.log(bear.gender);
-bear.toggleSex();
-console.log(bear.gender);
+// console.log(bear.gender);
+// bear.toggleSex();
+// console.log(bear.gender);
