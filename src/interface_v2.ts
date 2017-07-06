@@ -46,4 +46,76 @@ class Clock implements ClockInterface {
 
 let c = CreateClock(Clock, 15, 23);
 
-c.tick();
+// c.tick();
+
+// 混合类型
+// interface Counter {
+// 	(start: number): string;
+// 	interval: number;
+// 	reset(): void
+// }
+
+// 返回值类型是Counter
+// function getCounter(): Counter {
+	// 构造函数的写法
+// 	let counter = <Counter>function(start: number) {};
+// 	counter.interval = 200;
+// 	counter.reset = function() {console.log('x');}
+// 	return counter;
+// }
+
+// let cd = getCounter();
+// cd(10);
+// cd.reset();
+
+// 接口继承接口
+interface queryBaseModel {
+	id: number
+}
+
+interface queryBizModel {
+	bizType: number
+}
+
+interface queryUserModel extends queryBaseModel {
+	nm: string
+}
+
+interface carBaseModel extends queryUserModel, queryBizModel {
+	pttype: number
+}
+
+let queryCarInfo: carBaseModel = {
+	id: 20,
+	bizType: 13,
+	nm: 'ss',
+	pttype: 18
+}
+// console.log(queryCarInfo);
+
+// 接口继承类
+
+// person class
+class Person {
+	private _lifeType: string = 'human';
+}
+// person interface
+// 变性接口继承自person类, 给person类定义了具体的方法
+// 这个接口里的方法只能被这个类及其子类去具体实现
+interface ChangeSex extends Person {
+	toggleSex(): void;
+}
+
+class Man extends Person {
+	gender: string = 'male';
+	toggleSex() {
+		this.gender = 'female';
+	};
+}
+
+let bear = new Man();
+// _listType是私有属性, 也无法访问到
+// console.log(bear._lifeType);
+console.log(bear.gender);
+bear.toggleSex();
+console.log(bear.gender);
