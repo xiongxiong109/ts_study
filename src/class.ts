@@ -38,9 +38,9 @@ class BaseView {
 	private _pageToken: number = 12315;
 	protected pageType: string = 'layer';
 	// 页面状态
-	state: object;
+	state?: string;
 	// initial
-	constructor(initState?: object) {
+	constructor(initState?: string) {
 		this.state = initState;
 	}
 	// 可以通过public方法访问私有变量, 但是无法直接访问私有变量
@@ -50,10 +50,11 @@ class BaseView {
 }
 
 class UILayerView extends BaseView {
-	constructor(state?: object) {
+	constructor(state?: string) {
 		super(state);
 		this.showToken();
 	}
 }
 
-let UIlayer = new UILayerView();
+let UIlayer = new UILayerView('ui_layer');
+console.log(UIlayer);

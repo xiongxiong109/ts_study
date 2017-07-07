@@ -4,7 +4,7 @@
   "description": "how to use ts",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp"
+    "dev": "tsc -w"
   },
   "author": "xiongxiong",
   "license": "ISC",
