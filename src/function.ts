@@ -26,3 +26,48 @@ function(x) {
 // function(a: string): string{
 // 	return a;
 // }
+
+// 可选参数与默认参数(函数参数不能既是可选参数，又有默认值)
+/*
+	可选参数必须放在必填参数后面
+	默认参数不一定要放在必填参数后面，但是如果放在前面的默认参数不填
+	则必须明确指定为undefined
+*/
+function showMask(msg: string, needCls?: boolean): void {
+	console.log(`${msg} is ${needCls}`);
+}
+
+// showMask('Hello');
+
+function showDefaultMask(msg: string, needCls = false): void {
+	console.log(`${msg} is ${needCls}`);
+}
+
+// 剩余参数, 可以将剩余参数收集到一个集合中(_.omit的实现)
+
+// 定义一个集合方法接口
+interface collectionMethods {
+	omit(obj: object, ...restArgs: string[]):object;
+}
+class underscore implements collectionMethods {
+	// 在类中实现这个接口方法
+	omit(obj:any, ...restArgs: string[]):object {
+		for (let key in obj) {
+			if (restArgs.indexOf(key) >= 0) {
+				delete obj[key];
+			}
+		}
+		return obj;
+	}
+}
+
+let _ = new underscore();
+
+let obj1: any = {
+	'_id': '3a2sd13as2d',
+	'token': 'sdasd2asdf321',
+	'unm': 'xiongxsas',
+	'age': 12
+}
+
+console.log(_.omit(obj1, '_id', '_token'));

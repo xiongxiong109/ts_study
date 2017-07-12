@@ -37,6 +37,9 @@ function showAlert(content: string = 'hello'): void {
 // showAlert('hello world');
 
 // null 和 undefined
+let aun: undefined = undefined;
+let anul: null = null;
+console.log(aun == anul);
 // never 类型
 function showError(message: string): never {
 	throw new Error(message);
