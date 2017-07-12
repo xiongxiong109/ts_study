@@ -61,13 +61,20 @@ class underscore implements collectionMethods {
 	}
 }
 
-let _ = new underscore();
+// let _ = new underscore();
 
-let obj1: any = {
-	'_id': '3a2sd13as2d',
-	'token': 'sdasd2asdf321',
-	'unm': 'xiongxsas',
-	'age': 12
-}
+// let obj1: any = {
+// 	'_id': '3a2sd13as2d',
+// 	'token': 'sdasd2asdf321',
+// 	'unm': 'xiongxsas',
+// 	'age': 12
+// }
 
-console.log(_.omit(obj1, '_id', '_token'));
+// console.log(_.omit(obj1, '_id', '_token'));
+
+// test, 这样的尝试是不可取的, 剩余参数只能是最后一个形参, 没有中间参数的概念
+// function showArgs(firstArg: string, ...middleArgs: string[], lastArg: string):void {
+// 	console.log(firstArg);
+// 	console.log(middleArgs.join(' '));
+// 	console.log(lastArg);
+// }
