@@ -78,3 +78,26 @@ class underscore implements collectionMethods {
 // 	console.log(middleArgs.join(' '));
 // 	console.log(lastArg);
 // }
+
+// this & 箭头函数
+interface Token {
+	url: string;
+	clientId: number;
+	// 定义一个函数, 返回值是字符串
+	// fetch: (this: Token) => string;
+	// 定义一个函数, 返回一个返回字符串的函数
+	fetch(this: Token): () => string;
+}
+
+let getToken: Token = {
+	url: '/pubresturl/getToken',
+	clientId: 12125323,
+	fetch: function(this: Token) {
+		return () => {
+			console.log(this.url);
+			return 'sad3as2d1as32d1';
+		}
+	}
+}
+
+let fun = getToken.fetch();
